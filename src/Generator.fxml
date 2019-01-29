@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GeneratorController">
+  <tabs>
+    <Tab text="Printer Properties">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <HBox layoutX="7.0" layoutY="6.0" prefHeight="358.0" prefWidth="584.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="292.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Printer Name" />
+                                    <TextField fx:id="PrinterName" layoutX="95.0" layoutY="10.0" prefHeight="25.0" prefWidth="184.0" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Bed Size" />
+                                    <Label layoutX="74.0" layoutY="14.0" text="X" />
+                                    <Label layoutX="143.0" layoutY="14.0" text="Y" />
+                                    <Label layoutX="215.0" layoutY="14.0" text="Z" />
+                                    <TextField id="BSX" fx:id="BSX" layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="45.0" promptText="(mm)" />
+                                    <TextField id="BSY" fx:id="BSY" layoutX="156.0" layoutY="10.0" prefHeight="25.0" prefWidth="49.0" promptText="(mm)" />
+                                    <TextField id="BSZ" fx:id="BSZ" layoutX="226.0" layoutY="10.0" prefHeight="25.0" prefWidth="51.0" promptText="(mm)" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Z layer height" />
+                                    <Label layoutX="109.0" layoutY="14.0" text="Min" />
+                                    <Label layoutX="195.0" layoutY="14.0" text="Max" />
+                                    <TextField id="ZHMIN" fx:id="ZHMIN" layoutX="138.0" layoutY="10.0" prefHeight="25.0" prefWidth="50.0" promptText="(mm)" />
+                                    <TextField id="ZHMAX" fx:id="ZHMAX" layoutX="221.0" layoutY="10.0" prefHeight="25.0" prefWidth="57.0" promptText="(mm)" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Fillament Diameter" />
+                                    <TextField id="FD" fx:id="FD" layoutX="129.0" layoutY="10.0" prefHeight="25.0" prefWidth="149.0" promptText="(mm)" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Nozzle Diameter" />
+                                    <TextField id="ND" fx:id="ND" layoutX="129.0" layoutY="10.0" promptText="(mm)" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Extruder Temp" />
+                                    <TextField id="ET" fx:id="ET" layoutX="127.0" layoutY="10.0" prefHeight="25.0" prefWidth="149.0" promptText="(°C)" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Min" />
+                                    <Label layoutX="146.0" layoutY="14.0" text="Max" />
+                                    <TextField id="ETMIN" fx:id="ETMIN" layoutX="42.0" layoutY="10.0" prefHeight="25.0" prefWidth="94.0" promptText="(°C)" />
+                                    <TextField id="ETMAX" fx:id="ETMAX" layoutX="176.0" layoutY="10.0" prefHeight="25.0" prefWidth="101.0" promptText="(°C)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Bed Temp" />
+                                    <TextField id="BT" fx:id="BT" layoutX="129.0" layoutY="8.0" promptText="(°C)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Min" />
+                                    <Label layoutX="146.0" layoutY="12.0" text="Max" />
+                                    <TextField id="BTMIN" fx:id="BTMIN" layoutX="41.0" layoutY="8.0" prefHeight="25.0" prefWidth="95.0" promptText="(°C)" />
+                                    <TextField id="BTMAX" fx:id="BTMAX" layoutX="177.0" layoutY="8.0" prefHeight="25.0" prefWidth="100.0" promptText="(°C)" />
+                                 </children>
+                              </Pane>
+                           </children></VBox>
+                        <VBox prefHeight="200.0" prefWidth="292.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Print speed" />
+                                    <TextField id="PS" fx:id="PS" layoutX="100.0" layoutY="10.0" prefHeight="25.0" prefWidth="176.0" promptText="(mm/s)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="Min" />
+                                    <Label layoutX="146.0" layoutY="11.0" text="Max" />
+                                    <TextField id="PSMIN" fx:id="PSMIN" layoutX="41.0" layoutY="7.0" prefHeight="25.0" prefWidth="94.0" promptText="(mm/s)" />
+                                    <TextField id="PSMAX" fx:id="PSMAX" layoutX="177.0" layoutY="7.0" prefHeight="25.0" prefWidth="101.0" promptText="(mm/s)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="First layer speed" />
+                                    <TextField fx:id="FLS" layoutX="118.0" layoutY="8.0" prefHeight="25.0" prefWidth="160.0" promptText="(mm/s)" styleClass="FLS" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Min" />
+                                    <Label layoutX="146.0" layoutY="12.0" text="Max" />
+                                    <TextField id="FLSMIN" fx:id="FLSMIN" layoutX="42.0" layoutY="8.0" prefHeight="25.0" prefWidth="94.0" promptText="(mm/s)" />
+                                    <TextField id="FLSMAX" fx:id="FLSMAX" layoutX="177.0" layoutY="8.0" prefHeight="25.0" prefWidth="101.0" promptText="(mm/s)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Perimeter speed" />
+                                    <TextField fx:id="PERS" layoutX="129.0" layoutY="8.0" promptText="(mm/s)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="12.0" text="Min" />
+                                    <Label layoutX="146.0" layoutY="12.0" text="Max" />
+                                    <TextField id="PERMIN" fx:id="PERSMIN" layoutX="42.0" layoutY="8.0" prefHeight="25.0" prefWidth="94.0" promptText="(mm/s)" />
+                                    <TextField id="PERMAX" fx:id="PERSMAX" layoutX="177.0" layoutY="8.0" prefHeight="25.0" prefWidth="101.0" promptText="(mm/s)" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" />
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#Generate" text="Generate" />
+                                    <TextField fx:id="PathField" layoutX="84.0" layoutY="8.0" prefHeight="25.0" prefWidth="194.0" />
+                                 </children></Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="userMessage" layoutX="14.0" layoutY="12.0" />
+                                 </children>
+                              </Pane>
+                           </children></VBox>
+                     </children></HBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Header">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextArea fx:id="Header" layoutX="7.0" layoutY="6.0" prefHeight="358.0" prefWidth="584.0" text="G21 ; set units to millimeters&#10;M104 S&lt;TOOLTEMP&gt; ; set temperature&#10;M190 S&lt;HBPTEMP&gt; ; wait for bed temperature to be reached&#10;G28 ; home all axes&#10;M109 S&lt;TOOLTEMP&gt; ; wait for temperature to be reached&#10;G90 ; use absolute coordinates&#10;M82 ; use absolute distances for extrusion&#10;G92 E0&#10;G1 Z1.0 F3000 ; move z up little to prevent scratching of surface&#10;G1 X0.1 Y5.0 Z0.3 F5000.0 ; move to start-line position&#10;G1 X0.1 Y45.0 Z0.3 F1500.0 E15 ; draw 1st line&#10;G1 X0.4 Y45.0 Z0.3 F5000.0 ; move to side a little&#10;G1 X0.4 Y5.0 Z0.3 F1500.0 E30 ; draw 2nd line&#10;G1 E27 F3000 ; retract filament 3mm&#10;G92 E0 ; reset extruder&#10;; done purging extruder&#10;G1 Z1.0 F3000 ; move z up little to prevent scratching of surface&#10;" />
+               </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Footer">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                  <TextArea fx:id="Footer" layoutX="7.0" layoutY="6.0" prefHeight="358.0" prefWidth="584.0" text="G92 E0&#10;M107       ; fan off&#10;M104 S0    ; turn off temperature&#10;M140 S0&#10;M107&#10;G1 X0      ; move back X to origin&#10;M84        ; disable motors&#10;&#10;" />
+                </children>
+          </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
