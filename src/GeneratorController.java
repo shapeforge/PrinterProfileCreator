@@ -79,10 +79,13 @@ public class GeneratorController implements Initializable {
         String path = PathField.getText();
         path = path + PrinterName.getText();
 
-        boolean success = (new File(path)).mkdirs();
-        if (!success) {
+        File Directory = new File(path);
+        if (Directory.exists()) {
             print("Folder path is not valid");
             return;
+        }
+        else{
+            Directory.mkdirs();
         }
         (new File(path+ "\\profiles")).mkdirs();
         (new File(path+ "\\materials")).mkdirs();
@@ -170,6 +173,7 @@ public class GeneratorController implements Initializable {
         write(path+"\\profiles\\standard.lua",medium );
 
         print("Profile successfully generated");
+
     }
 
     private void checkemptyFields(){
@@ -199,10 +203,11 @@ public class GeneratorController implements Initializable {
     }
 
 
-    private void write(String path, String footer) {
+    private void write(String path, String content) {
         try {
             FileOutputStream file = new FileOutputStream(path);
-            file.write(footer.getBytes());
+            file.write(content.getBytes());
+            file.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

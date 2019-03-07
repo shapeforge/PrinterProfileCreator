@@ -8,7 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Generator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Manager.fxml"));
         primaryStage.setTitle("IceSL Printer Profile Creator");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setResizable(false);
