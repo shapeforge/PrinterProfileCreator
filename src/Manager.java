@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -26,6 +27,8 @@ public class Manager implements Initializable {
     @FXML
     VBox Saved;
 
+    @FXML
+    TextField path;
 
 
     String appdata ;
@@ -36,14 +39,9 @@ public class Manager implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         appdata = System.getenv("APPDATA");
         if(appdata == null)
-        appdata = appdata == null ? "./" : appdata;
-        instalDirectory = new File(appdata+"\\IceSL\\icesl-printers\\fff");
-        saveDirectory = new File(appdata+"\\IceSL\\icesl-printers_saved\\fff");
-        if(!saveDirectory.exists()) {
-            new File(appdata + "\\IceSL\\icesl-printers_saved").mkdirs();
-            new File(appdata + "\\IceSL\\icesl-printers_saved\\fff").mkdirs();
-        }
-        load();
+        appdata = appdata == null ? "." : appdata;
+        appdata += "\\IceSL";
+        path.setText(appdata);
     }
 
 
@@ -55,7 +53,7 @@ public class Manager implements Initializable {
                 CheckBox ch = (CheckBox)o;
                 if(ch.isSelected()){
                     try {
-                        Files.move(new File(appdata + "\\IceSL\\icesl-printers\\fff\\"+ch.getText()).toPath(), new File(appdata + "\\IceSL\\icesl-printers_saved\\fff\\"+ch.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+                        Files.move(new File(appdata + "\\icesl-printers\\fff\\"+ch.getText()).toPath(), new File(appdata + "\\icesl-printers_saved\\fff\\"+ch.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
                     } catch (IOException e) {
                         System.out.println("Allready saved printer" );
                     }
@@ -76,7 +74,7 @@ public class Manager implements Initializable {
                 CheckBox ch = (CheckBox)o;
                 if(ch.isSelected()){
                     try {
-                        Files.move(new File(appdata + "\\IceSL\\icesl-printers_saved\\fff\\"+ch.getText()).toPath(), new File(appdata + "\\IceSL\\icesl-printers\\fff\\"+ch.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+                        Files.move(new File(appdata + "\\icesl-printers_saved\\fff\\"+ch.getText()).toPath(), new File(appdata + "\\icesl-printers\\fff\\"+ch.getText()).toPath(), StandardCopyOption.REPLACE_EXISTING);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -104,6 +102,14 @@ public class Manager implements Initializable {
 
     @FXML
     void load(){
+        appdata = path.getText();
+        instalDirectory = new File(appdata+"\\icesl-printers\\fff");
+        saveDirectory = new File(appdata+"\\icesl-printers_saved\\fff");
+        if(!saveDirectory.exists()) {
+            new File(appdata + "\\icesl-printers_saved").mkdirs();
+            new File(appdata + "\\icesl-printers_saved\\fff").mkdirs();
+        }
+
         Installed.getChildren().remove(0, Installed.getChildren().size());
         Saved.getChildren().remove(0, Saved.getChildren().size());
         File[] fList = instalDirectory.listFiles();
